@@ -18,26 +18,26 @@
     "@astrojs/starlight": "0.34.3",
     "@fontsource/ibm-plex-mono": "5.2.5",
     "@shikijs/transformers": "3.20.0",
-    "@types/luxon": "catalog:",
-    "ai": "catalog:",
+    "@types/luxon": "resolved",
+    "ai": "resolved",
     "astro": "5.7.13",
-    "diff": "catalog:",
+    "diff": "resolved",
     "js-base64": "3.7.7",
     "lang-map": "0.4.0",
-    "luxon": "catalog:",
-    "marked": "catalog:",
-    "marked-shiki": "catalog:",
+    "luxon": "resolved",
+    "marked": "resolved",
+    "marked-shiki": "resolved",
     "rehype-autolink-headings": "7.1.0",
-    "remeda": "catalog:",
-    "shiki": "catalog:",
-    "solid-js": "catalog:",
+    "remeda": "resolved",
+    "shiki": "resolved",
+    "solid-js": "resolved",
     "toolbeam-docs-theme": "0.4.8",
     "vscode-languageserver-types": "3.17.5"
   },
   "devDependencies": {
-    "opencode": "workspace:*",
-    "@types/node": "catalog:",
+    "opencode": "resolved",
+    "@types/node": "resolved",
     "@astrojs/check": "0.9.6",
-    "typescript": "catalog:"
+    "typescript": "resolved"
   }
 }

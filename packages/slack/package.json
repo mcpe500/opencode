@@ -8,12 +8,12 @@
     "typecheck": "tsgo --noEmit"
   },
   "dependencies": {
-    "@opencode-ai/sdk": "workspace:*",
+    "@opencode-ai/sdk": "resolved",
     "@slack/bolt": "^3.17.1"
   },
   "devDependencies": {
-    "@types/node": "catalog:",
-    "typescript": "catalog:",
-    "@typescript/native-preview": "catalog:"
+    "@types/node": "resolved",
+    "typescript": "resolved",
+    "@typescript/native-preview": "resolved"
   }
 }

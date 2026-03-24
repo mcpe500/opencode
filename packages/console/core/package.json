@@ -8,15 +8,15 @@
   "dependencies": {
     "@aws-sdk/client-sts": "3.782.0",
     "@jsx-email/render": "1.1.1",
-    "@opencode-ai/console-mail": "workspace:*",
-    "@opencode-ai/console-resource": "workspace:*",
+    "@opencode-ai/console-mail": "resolved",
+    "@opencode-ai/console-resource": "resolved",
     "@planetscale/database": "1.19.0",
     "aws4fetch": "1.0.20",
-    "drizzle-orm": "catalog:",
+    "drizzle-orm": "resolved",
     "postgres": "3.4.7",
     "stripe": "18.0.0",
-    "ulid": "catalog:",
-    "zod": "catalog:"
+    "ulid": "resolved",
+    "zod": "resolved"
   },
   "exports": {
     "./*.js": "./src/*.ts",
@@ -40,13 +40,13 @@
     "typecheck": "tsgo --noEmit"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "catalog:",
+    "@cloudflare/workers-types": "resolved",
     "@tsconfig/node22": "22.0.2",
-    "@types/bun": "catalog:",
-    "@types/node": "catalog:",
-    "drizzle-kit": "catalog:",
+    "@types/bun": "resolved",
+    "@types/node": "resolved",
+    "drizzle-kit": "resolved",
     "mysql2": "3.14.4",
-    "typescript": "catalog:",
-    "@typescript/native-preview": "catalog:"
+    "typescript": "resolved",
+    "@typescript/native-preview": "resolved"
   }
 }

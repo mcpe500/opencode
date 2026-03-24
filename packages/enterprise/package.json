@@ -13,29 +13,29 @@
     "shell-prod": "sst shell --target Teams --stage production"
   },
   "dependencies": {
-    "@opencode-ai/util": "workspace:*",
-    "@opencode-ai/ui": "workspace:*",
+    "@opencode-ai/util": "resolved",
+    "@opencode-ai/ui": "resolved",
     "aws4fetch": "^1.0.20",
-    "@pierre/diffs": "catalog:",
-    "@solidjs/router": "catalog:",
-    "@solidjs/start": "catalog:",
-    "@solidjs/meta": "catalog:",
-    "hono": "catalog:",
-    "hono-openapi": "catalog:",
+    "@pierre/diffs": "resolved",
+    "@solidjs/router": "resolved",
+    "@solidjs/start": "resolved",
+    "@solidjs/meta": "resolved",
+    "hono": "resolved",
+    "hono-openapi": "resolved",
     "js-base64": "3.7.7",
-    "luxon": "catalog:",
+    "luxon": "resolved",
     "nitro": "3.0.1-alpha.1",
-    "solid-js": "catalog:",
-    "zod": "catalog:"
+    "solid-js": "resolved",
+    "zod": "resolved"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "catalog:",
-    "@tailwindcss/vite": "catalog:",
-    "@typescript/native-preview": "catalog:",
-    "@types/luxon": "catalog:",
-    "tailwindcss": "catalog:",
-    "typescript": "catalog:",
-    "vite": "catalog:"
+    "@cloudflare/workers-types": "resolved",
+    "@tailwindcss/vite": "resolved",
+    "@typescript/native-preview": "resolved",
+    "@types/luxon": "resolved",
+    "tailwindcss": "resolved",
+    "typescript": "resolved",
+    "vite": "resolved"
   },
   "engines": {
     "node": ">=22"
