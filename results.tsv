@@ -1,5 +1,12 @@
 commit	attempt	environment	command	result	status	description
-9a006d870	baseline	termux	opencode --version	fail	keep	npm install fails: opencode-android-arm64 package doesn't exist
+aa5806f	reinstall-check	termux	opencode --version	success	keep	npm-installed opencode works for --version via glibc-runner wrapper
+aa5806f	binary-help	termux	opencode --help	fail	keep	binary shows Bun help instead of OpenCode help - execArgv not honored by glibc-runner
+aa5806f	binary-run	termux	opencode run test	fail	crash	binary segfaults on run command - glibc-runner compatibility issue
+aa5806f	musl-binary	termux	musl opencode --version	fail	discard	musl binary requires musl libc which is not available in termux
+aa5806f	version-crash	termux	opencode --version	fail	crash	--version prints output but binary crashes after (exit 139) - fundamental glibc incompatibility
+aa5806f	node-deps	termux	npm install --ignore-scripts	success	keep	installed 768 packages with --ignore-scripts (skipped native builds)
+aa5806f	node-source	termux	npx tsx src/index.ts	fail	crash	workspace package imports (@opencode-ai/*) can't be resolved
+aa5806f	baseline	termux	opencode --version	fail	keep	npm install fails: opencode-android-arm64 package doesn't exist
 9a006d870	npm-install	termux	npm install -g opencode-ai	fail	keep	postinstall fails: bun not found, android platform not supported
 9a006d870	bun-install	termux	npm install -g bun	fail	keep	npm rejects bun: wanted os darwin/linux/win32, actual android
 9a006d870	bun-official	termux	curl bun.sh/install | bash	fail	keep	bun binary is non-PIE, Android requires PIE executables
