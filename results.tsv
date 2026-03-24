@@ -1,4 +1,8 @@
 commit	attempt	environment	command	result	status	description
+65d9859	entrypoint-audit	termux	inspect bin/opencode	fail	keep	launcher looks for opencode-android-arm64 but only linux-arm64 exists - fixed platformMap
+65d9859	binary-glibc	termux	glibc-runner .opencode --version	fail	crash	segfault (exit 139) - glibc/bionic incompatibility in complex Bun binary
+65d9859	binary-direct	termux	ld-linux .opencode --version	fail	crash	invalid ELF header on libc.so - glibc linker script incompatible with bionic
+65d9859	wrapper-termux	termux	node opencode-termux --version	fail	discard	glibc-runner wrapper produces no output - same underlying binary issue
 afbd11a	node-route-shim	termux	npx tsx src/index.ts	fail	crash	bun-shim created but npm dependencies missing (catalog: protocol)
 afbd11a	node-route-audit	termux	inspect source	fail	keep	direct bun: imports found in db.ts, json-migration.ts, win32.ts, run.ts, thread.ts, prompt/*.tsx - fixed with shims
 afbd11a	packaging-audit	termux	inspect postinstall	fail	keep	postinstall.mjs doesn't map android to linux - fixed
