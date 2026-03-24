@@ -17,6 +17,8 @@ function detectPlatformAndArch() {
       platform = "darwin"
       break
     case "linux":
+    case "android":
+      // Android/Termux uses linux binaries
       platform = "linux"
       break
     case "win32":

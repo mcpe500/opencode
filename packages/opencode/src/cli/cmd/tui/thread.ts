@@ -14,6 +14,7 @@ import type { EventSource } from "./context/sdk"
 import { win32DisableProcessedInput, win32InstallCtrlCGuard } from "./win32"
 import { TuiConfig } from "@/config/tui"
 import { Instance } from "@/project/instance"
+import { stdin } from "@/bun-shim.js"
 
 declare global {
   const OPENCODE_WORKER_PATH: string
@@ -56,7 +57,7 @@ async function target() {
 }
 
 async function input(value?: string) {
-  const piped = process.stdin.isTTY ? undefined : await Bun.stdin.text()
+  const piped = process.stdin.isTTY ? undefined : await stdin.text()
   if (!value) return piped
   if (!piped) return value
   return piped + "\n" + value

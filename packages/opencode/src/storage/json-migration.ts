@@ -1,5 +1,5 @@
-import { Database } from "bun:sqlite"
-import { drizzle } from "drizzle-orm/bun-sqlite"
+import { DatabaseSync } from "node:sqlite"
+import { drizzle } from "drizzle-orm/node-sqlite"
 import { Global } from "../global"
 import { Log } from "../util/log"
 import { ProjectTable } from "../project/project.sql"
@@ -23,7 +23,7 @@ export namespace JsonMigration {
     progress?: (event: Progress) => void
   }
 
-  export async function run(sqlite: Database, options?: Options) {
+  export async function run(sqlite: DatabaseSync, options?: Options) {
     const storageDir = path.join(Global.Path.data, "storage")
 
     if (!existsSync(storageDir)) {

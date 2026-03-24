@@ -1,4 +1,8 @@
 commit	attempt	environment	command	result	status	description
+afbd11a	node-route-shim	termux	npx tsx src/index.ts	fail	crash	bun-shim created but npm dependencies missing (catalog: protocol)
+afbd11a	node-route-audit	termux	inspect source	fail	keep	direct bun: imports found in db.ts, json-migration.ts, win32.ts, run.ts, thread.ts, prompt/*.tsx - fixed with shims
+afbd11a	packaging-audit	termux	inspect postinstall	fail	keep	postinstall.mjs doesn't map android to linux - fixed
+afbd11a	install-audit	termux	inspect install	fail	keep	install script uses uname (returns Linux) but npm rejects android - needs npm platform fix
 aa5806f	reinstall-check	termux	opencode --version	success	keep	npm-installed opencode works for --version via glibc-runner wrapper
 aa5806f	binary-help	termux	opencode --help	fail	keep	binary shows Bun help instead of OpenCode help - execArgv not honored by glibc-runner
 aa5806f	binary-run	termux	opencode run test	fail	crash	binary segfaults on run command - glibc-runner compatibility issue
