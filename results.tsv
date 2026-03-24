@@ -1,0 +1,18 @@
+commit	attempt	environment	command	result	status	description
+9a006d870	baseline	termux	opencode --version	fail	keep	npm install fails: opencode-android-arm64 package doesn't exist
+9a006d870	npm-install	termux	npm install -g opencode-ai	fail	keep	postinstall fails: bun not found, android platform not supported
+9a006d870	bun-install	termux	npm install -g bun	fail	keep	npm rejects bun: wanted os darwin/linux/win32, actual android
+9a006d870	bun-official	termux	curl bun.sh/install | bash	fail	keep	bun binary is non-PIE, Android requires PIE executables
+9a006d870	glibc-runner	termux+glibc	glibc-runner bun --version	success	keep	bun works via glibc-runner but can't access /data/data/ from inside
+9a006d870	manual-binary	termux+glibc	glibc-runner opencode-linux-arm64 --version	success	keep	opencode binary works via glibc-runner (shows 1.3.10)
+9a006d870	wrapper-script	termux+glibc	node wrapper --version	success	keep	custom node wrapper using glibc-runner works for --version
+9a006d870	opencode-help	termux+glibc	opencode --help	fail	keep	shows Bun help instead of OpenCode - binary not properly configured
+9a006d870	opencode-run	termux+glibc	opencode run "hello"	fail	crash	glibc-runner error: Cannot read directory /data/data/ - AccessDenied
+9a006d870	opencode-noarg	termux+glibc	opencode (no args)	fail	keep	shows Bun help instead of OpenCode TUI
+9a006d870	source-tsx	termux	tsx src/index.ts --version	fail	crash	missing dependencies, incomplete bun install
+9a006d870	glibc-build	termux+glibc	glibc bun install	fail	crash	EACCES on package linking, glibc can't write properly
+9a006d870	glibc-source	termux+glibc	glibc bun run src/index.ts	fail	crash	babel compatibility, dependencies reference termux paths
+9a006d870	glibc-full-repo	termux+glibc	glibc bun install (full repo)	fail	crash	EACCES on package linking
+9a006d870	global-symlink	termux+glibc	opencode --version	success	keep	global opencode symlink works via glibc-runner wrapper
+9a006d870	npm-glibc-install	termux+glibc	npm install --force	success	keep	npm installed 789 packages in glibc home with --force
+9a006d870	npm-tsx-run	termux+glibc	node tsx src/index.ts	fail	crash	source uses bun:ffi and bun:sqlite which Node.js doesn't support
