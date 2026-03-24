@@ -1,4 +1,9 @@
 commit	attempt	environment	command	result	status	description
+b11fd02	packaging-audit	termux	inspect packaging	fail	keep	Android handling: postinstall.mjs (FIXED: android→linux), bin/opencode (FIXED: android→linux), install script (OK: uname returns Linux). Blocker: npm optionalDependencies missing opencode-android-arm64 - linux-arm64 exists but npm rejects android platform at resolution level
+b11fd02	cli-tui-split	termux	opencode --version	fail	crash	CLI cannot start - binary fails at dynamic linker level (glibc libc.so invalid ELF header). Cannot test CLI vs TUI split because binary runtime is blocked before any CLI dispatch
+b11fd02	bun-import-audit	termux	inspect source	fail	keep	Bun APIs classified: bun:sqlite (db.bun.ts - has node alternative), Bun.serve (server files - runtime not CLI), Bun.$ (plugin - shell exec), Bun.file/Bun.write/Bun.build (script/ - build-time only). CLI startup blockers: catalog: protocol, not Bun imports
+b11fd02	monorepo-build	termux	npx tsx src/index.ts	fail	crash	workspace symlinks exist (@opencode-ai/*) but npm install fails due to catalog: protocol - missing deps like yargs cannot be installed
+b11fd02	workspace-audit	termux	inspect workspaces	fail	keep	root uses Bun catalog: protocol (npm incompatible), workspace:* deps for @opencode-ai/* packages, turbo.json for builds - npm rejects catalog: immediately
 c5cdbfb	packaging-build	termux	inspect script/build.ts	fail	keep	build.ts targets: linux/darwin/win32 only - no android target, would need Bun.build android support
 c5cdbfb	packaging-publish	termux	inspect script/publish.ts	fail	keep	publish.ts packs from ./dist/* binaries - no android binary = no android package published
 c5cdbfb	packaging-npm	termux	inspect npm registry	fail	keep	npm show opencode-ai optionalDependencies: no opencode-android-arm64 listed
